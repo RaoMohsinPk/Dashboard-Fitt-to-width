@@ -9,34 +9,22 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-        }
-
-        .iframe-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff; /* Optional background color */
+            background-color: #ffffff; /* Optional */
         }
 
         iframe {
-            width: 100%; /* Make iframe fill the container width */
-            height: 100%; /* Make iframe fill the container height */
-            border: none;
-            transform: scale(1); /* Ensure scaling starts at 1 */
-            transform-origin: top left; /* Scale from the top-left corner */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full screen width */
+            height: 100vh; /* Full screen height */
+            border: none; /* Remove border */
         }
     </style>
 </head>
 <body>
-    <div class="iframe-container">
-        <iframe 
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true">
-        </iframe>
-    </div>
+    <iframe 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true">
+    </iframe>
 </body>
 </html>
