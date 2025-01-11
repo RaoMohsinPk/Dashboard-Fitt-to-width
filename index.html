@@ -8,23 +8,31 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             background-color: #ffffff; /* Optional */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: flex-start; /* Align to the top vertically */
+        }
+
+        .iframe-container {
+            width: 100vw; /* Full screen width */
+            height: calc(100vw * 16 / 9); /* Height based on 9:16 ratio */
+            max-height: 100vh; /* Prevent overflow on very tall devices */
+            position: relative;
         }
 
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw; /* Full screen width */
-            height: 100vh; /* Full screen height */
+            width: 100%;
+            height: 100%;
             border: none; /* Remove border */
         }
     </style>
 </head>
 <body>
-    <iframe 
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true">
-    </iframe>
+    <div class="iframe-container">
+        <iframe 
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true">
+        </iframe>
+    </div>
 </body>
 </html>
