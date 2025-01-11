@@ -16,23 +16,35 @@
 
         .iframe-container {
             width: 100%;
-            height: 100vh; /* Full height of viewport */
+            height: 100vh; /* Full height of the viewport */
             position: relative;
-            overflow: hidden; /* Prevent overflow */
+            overflow: hidden;
         }
 
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            overflow: auto; /* Scrollable content */
-            zoom: 0.1; /* Set zoom to 0.1 */
+            transform-origin: 0 0; /* Origin at the top-left corner for scaling */
+            transition: transform 0.5s ease; /* Smooth transition */
         }
 
-        /* Media query for mobile devices */
+        /* Auto scale based on screen width */
         @media (max-width: 767px) {
             iframe {
-                zoom: 0.1; /* Maintain zoom level for small screens */
+                transform: scale(0.2); /* Scale to 0.2 for smaller screens */
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            iframe {
+                transform: scale(0.3); /* Scale to 0.3 for medium-sized screens */
+            }
+        }
+
+        @media (min-width: 1025px) {
+            iframe {
+                transform: scale(0.5); /* Scale to 0.5 for larger screens */
             }
         }
     </style>
