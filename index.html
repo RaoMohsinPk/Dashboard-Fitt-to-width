@@ -26,28 +26,23 @@
             height: 100%;
             border: none;
             overflow: auto; /* Scrollable content */
-            transform-origin: top left; /* Ensure scaling starts from top-left */
-            transition: transform 0.5s ease; /* Smooth transition */
+            zoom: 0.2; /* Fixed zoom level for default */
         }
 
-        /* Responsive scaling for different screen sizes */
-        @media (max-width: 767px) {
+        /* Media query for larger screens */
+        @media (min-width: 768px) {
             iframe {
-                transform: scale(calc(0.2 + 0.3 * (100vw / 1000))); /* Adjust scaling dynamically */
+                zoom: 0.2; /* Maintain zoom level for larger screens */
             }
         }
 
-        @media (min-width: 768px) and (max-width: 1024px) {
+        /* Optional: Media query to handle larger screens with no distortion */
+        @media (min-width: 1024px) {
             iframe {
-                transform: scale(0.4); /* Adjust scaling for medium screens */
+                zoom: 0.2; /* Set zoom value for larger screens if needed */
             }
         }
 
-        @media (min-width: 1025px) {
-            iframe {
-                transform: scale(0.6); /* Adjust scaling for larger screens */
-            }
-        }
     </style>
 </head>
 <body>
