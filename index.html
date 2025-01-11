@@ -6,49 +6,39 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .responsive-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* Aspect ratio (16:9) */
-            overflow: hidden;
-        }
-
-        .responsive-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
-            transform-origin: top left; /* Scale content from top-left corner */
-            transform: scale(1); /* Default scale (adjusted dynamically) */
+            overflow: hidden; /* No scrollbars */
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* To ensure content fits perfectly */
+        @media (max-width: 768px) { /* For smaller devices */
+            iframe {
+                transform: scale(0.9); /* Adjust this to fit mobile screens */
+                transform-origin: top left;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="responsive-container">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true" id="sheet"></iframe>
+    <div class="iframe-container">
+        <iframe 
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true">
+        </iframe>
     </div>
-    <script>
-        function adjustIframe() {
-            const iframe = document.getElementById('sheet');
-            const containerWidth = iframe.parentElement.offsetWidth;
-            const contentWidth = 1200; // Adjust this value to match your sheet's width in pixels
-            const scale = containerWidth / contentWidth;
-
-            iframe.style.transform = `scale(${scale})`;
-            iframe.style.width = `${contentWidth}px`;
-            iframe.style.height = `${1200 * scale}px`; // Adjust height as needed
-        }
-
-        // Adjust iframe on page load and window resize
-        window.addEventListener('load', adjustIframe);
-        window.addEventListener('resize', adjustIframe);
-    </script>
 </body>
 </html>
