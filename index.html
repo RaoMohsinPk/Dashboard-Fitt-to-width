@@ -26,23 +26,23 @@
             height: 100%;
             border: none;
             overflow: auto; /* Scrollable content */
-            zoom: 0.2; /* Default zoom for portrait mode */
+            transform-origin: top left; /* Ensure scaling starts from top-left */
+            transition: transform 0.5s ease; /* Smooth transition */
         }
 
-        /* For portrait mode */
+        /* Default scaling for portrait mode */
         @media (orientation: portrait) {
             iframe {
-                zoom: 0.2; /* Fixed zoom for portrait */
+                transform: scale(0.2); /* Fixed zoom for portrait mode */
             }
         }
 
-        /* For landscape mode */
+        /* Auto-adjust scale for landscape mode */
         @media (orientation: landscape) {
             iframe {
-                zoom: 0.25; /* Slightly higher zoom for landscape to fit content properly */
+                transform: scale(calc(0.2 + 0.3 * (100vw / 1000))); /* Dynamic scaling for landscape */
             }
         }
-
     </style>
 </head>
 <body>
