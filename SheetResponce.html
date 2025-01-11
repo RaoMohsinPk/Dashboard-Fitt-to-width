@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Make iframe responsive */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100vw;  /* Make the iframe width fit the screen width */
+            height: 100vh;  /* Keep the height 100% of the viewport height */
+            border: none;
+            overflow-x: auto;  /* Allow horizontal scrolling inside the iframe */
+        }
+
+        /* This will ensure the content adjusts inside the iframe */
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS_M-XkvlKTDlh8SKw47oyh6VGIirCj13l6SfRwxXXV8K_zBDBthI73Uj83DS4GBBlv4Gku2LMVEWM/pubhtml?gid=640633973&single=true"></iframe>
+</body>
+</html>
